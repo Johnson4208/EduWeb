@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fff9ef" />
+  <meta name="description" content="A playful, child-friendly language learning app with bite-sized lessons, pronunciation, matching games, and progress tracking." />
+  <title>Little Lingua — Big fun, little lessons</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#today" aria-label="Little Lingua home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span class="brand-name">little<span>lingua</span></span>
+      </a>
+
+      <div class="learner-mini">
+        <div class="avatar avatar-small" aria-hidden="true">🦊</div>
+        <div>
+          <strong>Hi, Sunny!</strong>
+          <span>Curious explorer</span>
+        </div>
+        <span class="online-dot" aria-label="Profile active"></span>
+      </div>
+
+      <p class="nav-label">YOUR SPACE</p>
+      <nav class="nav-links">
+        <button class="nav-link active" data-view="today"><span class="nav-icon">⌂</span><span>My day</span><span class="nav-arrow">›</span></button>
+        <button class="nav-link" data-view="learn"><span class="nav-icon">✧</span><span>Learn words</span></button>
+        <button class="nav-link" data-view="play"><span class="nav-icon">♟</span><span>Play & practice</span></button>
+        <button class="nav-link" data-view="stories"><span class="nav-icon">▤</span><span>Story garden</span><span class="new-tag">NEW</span></button>
+        <button class="nav-link" data-view="progress"><span class="nav-icon">↗</span><span>My progress</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sticker-card">
+          <span class="sticker-sparkle" aria-hidden="true">✦</span>
+          <div class="sticker-art" aria-hidden="true">🌱</div>
+          <strong>Little steps,</strong>
+          <strong>big adventures!</strong>
+          <p>Every word helps you grow.</p>
+        </div>
+        <button class="quiet-button" id="grownup-button"><span aria-hidden="true">⚙</span> Grown-up corner</button>
+        <p class="sidebar-footnote">Made for curious minds <span>♥</span></p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark">✦</span><span class="brand-name">little<span>lingua</span></span></div>
+        <div class="breadcrumb"><span>My learning space</span><span class="crumb-dot">•</span><strong id="page-crumb">My day</strong></div>
+        <div class="topbar-actions">
+          <label class="language-picker" for="language-select"><span class="language-flag" id="language-flag">🇪🇸</span><span class="picker-label">I’m learning</span>
+            <select id="language-select" aria-label="Choose a language">
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+              <option value="ja">Japanese</option>
+            </select><span class="chevron">⌄</span>
+          </label>
+          <button class="round-action" id="sound-toggle" aria-pressed="true" aria-label="Turn sound effects on or off" title="Sound effects">♫</button>
+          <button class="profile-button" id="profile-button" aria-label="Learner profile"><span class="avatar avatar-top">🦊</span><span class="profile-chevron">⌄</span></button>
+        </div>
+      </header>
+
+      <section class="view active" id="view-today" aria-labelledby="welcome-title">
+        <div class="welcome-row">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-star">✦</span> YOUR LITTLE LEARNING ADVENTURE</p>
+            <h1 id="welcome-title">Hello, Sunny! <span class="wave">👋</span></h1>
+            <p class="welcome-copy">Ready to make today a <span class="highlight-word">word-ful</span> day?</p>
+          </div>
+          <div class="date-pill"><span aria-hidden="true">☀</span> <span id="today-date">A bright new day</span></div>
+        </div>
+
+        <section class="hero-card" aria-label="Daily learning goal">
+          <div class="hero-copy">
+            <div class="hero-chip"><span>✦</span> YOUR DAILY QUEST</div>
+            <h2>Small steps.<br /><span>Super powers.</span></h2>
+            <p>Practice for just 10 minutes and watch your language magic grow.</p>
+            <div class="hero-progress-row">
+              <div class="hero-progress"><span id="hero-progress-fill"></span></div>
+              <span class="hero-progress-label"><strong id="daily-minutes">0</strong> / 10 min</span>
+            </div>
+            <button class="button button-white" id="start-quest">Let’s begin <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="sun-rays">✦</div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="hero-cloud cloud-one"></div><div class="hero-cloud cloud-two"></div>
+            <div class="hero-character">🦊</div><div class="floating-letter letter-a">A</div><div class="floating-letter letter-b">あ</div><div class="floating-star">✦</div>
+            <div class="hero-ground"></div>
+          </div>
+          <div class="hero-decoration decor-one">✦</div><div class="hero-decoration decor-two">✧</div>
+        </section>
+
+        <div class="section-heading-row">
+          <div><p class="eyebrow small-eyebrow">PICK YOUR PATH</p><h2 class="section-title">What shall we explore?</h2></div>
+          <button class="text-button" data-go="learn">See all lessons <span>→</span></button>
+        </div>
+
+        <div class="lesson-grid">
+          <article class="lesson-card card-peach">
+            <div class="lesson-card-top"><span class="lesson-icon">🧺</span><span class="time-chip">5 MIN</span></div>
+            <div class="lesson-art art-fruit" aria-hidden="true"><span>🍎</span><span>🍓</span><span>🍌</span></div>
+            <h3>My first words</h3><p>Meet 5 everyday words and say them out loud.</p>
+            <div class="lesson-card-bottom"><span class="level-dots"><i class="filled"></i><i></i><i></i></span><button class="circle-go" data-lesson="words" aria-label="Start My first words lesson">→</button></div>
+          </article>
+          <article class="lesson-card card-lilac">
+            <div class="lesson-card-top"><span class="lesson-icon">🐾</span><span class="time-chip">4 MIN</span></div>
+            <div class="lesson-art art-paws" aria-hidden="true"><span>🐱</span><span>🐶</span><span>🐸</span></div>
+            <h3>Animal friends</h3><p>Discover the names of your favorite creatures.</p>
+            <div class="lesson-card-bottom"><span class="level-dots"><i class="filled"></i><i></i><i></i></span><button class="circle-go" data-lesson="animals" aria-label="Start Animal friends lesson">→</button></div>
+          </article>
+          <article class="lesson-card card-mint">
+            <div class="lesson-card-top"><span class="lesson-icon">💬</span><span class="time-chip">6 MIN</span></div>
+            <div class="lesson-art art-chat" aria-hidden="true"><span>¡Hola!</span><span class="chat-spark">✦</span></div>
+            <h3>Friendly phrases</h3><p>Learn little phrases to say hello and thank you.</p>
+            <div class="lesson-card-bottom"><span class="level-dots"><i class="filled"></i><i class="filled"></i><i></i></span><button class="circle-go" data-lesson="phrases" aria-label="Start Friendly phrases lesson">→</button></div>
+          </article>
+        </div>
+
+        <div class="bottom-dashboard-grid">
+          <section class="weekly-card panel-card">
+            <div class="panel-heading"><div><p class="eyebrow small-eyebrow">YOUR LITTLE WINS</p><h2 class="section-title">This week</h2></div><span class="weekly-emoji">🌈</span></div>
+            <div class="week-days" id="week-days">
+              <div class="day-item"><span class="day-label">M</span><span class="day-bubble">·</span></div><div class="day-item"><span class="day-label">T</span><span class="day-bubble">·</span></div><div class="day-item"><span class="day-label">W</span><span class="day-bubble">·</span></div><div class="day-item"><span class="day-label">T</span><span class="day-bubble">·</span></div><div class="day-item"><span class="day-label">F</span><span class="day-bubble today">✦</span></div><div class="day-item"><span class="day-label">S</span><span class="day-bubble">·</span></div><div class="day-item"><span class="day-label">S</span><span class="day-bubble">·</span></div>
+            </div>
+            <div class="week-summary"><span>🔥 <strong id="streak-count">1 day</strong> streak</span><span><strong id="week-words">0</strong> words learned</span></div>
+          </section>
+          <section class="word-spotlight panel-card">
+            <div class="spotlight-copy"><p class="eyebrow small-eyebrow">WORD OF THE DAY</p><h2 id="spotlight-word">Hola!</h2><p id="spotlight-meaning">Hello!</p><span class="spotlight-note">A little word can make a big smile.</span><button id="speak-spotlight" class="text-button">Listen to it <span class="speaker-icon">◖))</span></button></div>
+            <div class="spotlight-art" id="spotlight-emoji" aria-hidden="true">👋</div>
+            <span class="spotlight-sun" aria-hidden="true">☀</span>
+          </section>
+        </div>
+      </section>
+
+      <section class="view" id="view-learn" aria-labelledby="learn-title">
+        <div class="view-heading"><div><p class="eyebrow"><span class="eyebrow-star">✦</span> WORD EXPLORER</p><h1 id="learn-title">Let’s learn something! <span>📚</span></h1><p class="welcome-copy">Tap a card, listen carefully, and try saying it yourself.</p></div><div class="mini-stat"><span>✨</span><div><strong id="learned-count">0</strong><small>words learned</small></div></div></div>
+        <div class="learning-toolbar"><div class="filter-pills" role="group" aria-label="Filter vocabulary"><button class="filter-pill active" data-category="all">All words</button><button class="filter-pill" data-category="everyday">Everyday</button><button class="filter-pill" data-category="animals">Animals</button><button class="filter-pill" data-category="phrases">Phrases</button></div><span class="helper-text">Listen, repeat, and have fun! <span>♫</span></span></div>
+        <div class="vocab-grid" id="vocab-grid"></div>
+        <div class="gentle-tip"><span class="tip-icon">💡</span><p><strong>Little learner tip</strong><br />There’s no rush! Try saying each word twice. Making mistakes is how our brains grow.</p><span class="tip-doodle">✿</span></div>
+      </section>
+
+      <section class="view" id="view-play" aria-labelledby="play-title">
+        <div class="view-heading"><div><p class="eyebrow"><span class="eyebrow-star">✦</span> PLAYTIME</p><h1 id="play-title">Ready, set, play! <span>🎈</span></h1><p class="welcome-copy">Games turn new words into super memories.</p></div><div class="mini-stat"><span>🏆</span><div><strong id="game-score">0</strong><small>stars earned</small></div></div></div>
+        <div class="game-layout">
+          <section class="game-panel panel-card">
+            <div class="game-panel-heading"><div><span class="game-label">GAME 01 · MATCH IT</span><h2>Find the matching word</h2><p>Which word means the picture below?</p></div><div class="game-mascot">🦉</div></div>
+            <div class="match-question"><span class="question-label">YOUR PICTURE</span><div class="question-emoji" id="question-emoji">🍎</div><p id="question-hint">Can you find the word for this?</p></div>
+            <div class="answer-grid" id="answer-grid"></div>
+            <div class="game-feedback" id="game-feedback" aria-live="polite">Pick an answer to start earning stars!</div>
+            <button class="button button-primary" id="next-question">Next picture <span>→</span></button>
+          </section>
+          <aside class="game-side">
+            <div class="game-side-card game-side-yellow"><span class="side-big-emoji">⭐</span><p class="eyebrow small-eyebrow">YOUR MISSION</p><h3>Collect 5 stars</h3><p>Every correct match earns a shiny star. You’ve got this!</p><div class="star-track" id="star-track"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div></div>
+            <div class="game-side-card game-side-blue"><span class="side-big-emoji">🧠</span><h3>Brain booster</h3><p>Look at the picture first. Say the word slowly, then choose your answer.</p></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-stories" aria-labelledby="stories-title">
+        <div class="view-heading"><div><p class="eyebrow"><span class="eyebrow-star">✦</span> STORY GARDEN</p><h1 id="stories-title">Once upon a word… <span>🌳</span></h1><p class="welcome-copy">Tiny stories, colorful characters, and words you already know.</p></div><div class="mini-stat"><span>📖</span><div><strong>1</strong><small>story to explore</small></div></div></div>
+        <article class="story-card">
+          <div class="story-cover"><div class="story-sun">☀</div><div class="story-rainbow">🌈</div><div class="story-scene"><span>🐰</span><span>🦋</span><span>🌼</span></div><div class="story-cover-title"><span>STORY NO. 01</span><h2>Luna’s Little Garden</h2><p>A tiny story about a very curious bunny.</p></div></div>
+          <div class="story-reader"><div class="story-progress-label"><span>READ TOGETHER</span><span id="story-page-label">Page 1 of 3</span></div><div class="story-progress"><span id="story-progress-fill"></span></div><div class="story-text" id="story-text"><p>Luna the bunny wakes up to a bright, sunny <span class="story-word">día</span> (day).</p><p>“¡Hola, garden!” she says to the flowers.</p></div><div class="story-controls"><button class="button button-soft" id="story-listen">♫ Listen to story</button><div class="story-next-group"><button class="circle-go circle-go-muted" id="story-prev" aria-label="Previous page" disabled>←</button><button class="button button-primary" id="story-next">Next page →</button></div></div></div>
+        </article>
+        <div class="story-note"><span>🌷</span><p><strong>Grown-ups and little readers:</strong> Read together, point to the pictures, and celebrate every new word.</p></div>
+      </section>
+
+      <section class="view" id="view-progress" aria-labelledby="progress-title">
+        <div class="view-heading"><div><p class="eyebrow"><span class="eyebrow-star">✦</span> LOOK HOW FAR YOU’VE COME</p><h1 id="progress-title">You’re growing every day! <span>🌻</span></h1><p class="welcome-copy">Every little practice adds up to something wonderful.</p></div><div class="progress-badge">🌟 Little star</div></div>
+        <div class="stats-grid"><article class="stat-card stat-lavender"><span>📚</span><strong id="progress-words">0</strong><p>Words learned</p><small>New words, new worlds.</small></article><article class="stat-card stat-peach"><span>⏱️</span><strong id="progress-minutes">0</strong><p>Minutes practiced</p><small>One minute at a time.</small></article><article class="stat-card stat-mint"><span>⭐</span><strong id="progress-stars">0</strong><p>Stars earned</p><small>You’re shining bright.</small></article><article class="stat-card stat-blue"><span>🔥</span><strong id="progress-streak">1</strong><p>Day streak</p><small>Come back for another adventure.</small></article></div>
+        <div class="progress-details-grid"><section class="panel-card progress-chart-card"><div class="panel-heading"><div><p class="eyebrow small-eyebrow">YOUR JOURNEY</p><h2 class="section-title">Practice this week</h2></div><span class="chart-legend"><i></i> Practice days</span></div><div class="progress-bars" id="progress-bars"><div class="progress-day"><div class="bar-shell"><i style="height:22%"></i></div><span>Mon</span></div><div class="progress-day"><div class="bar-shell"><i style="height:44%"></i></div><span>Tue</span></div><div class="progress-day"><div class="bar-shell"><i style="height:30%"></i></div><span>Wed</span></div><div class="progress-day"><div class="bar-shell"><i style="height:64%"></i></div><span>Thu</span></div><div class="progress-day"><div class="bar-shell"><i style="height:48%"></i></div><span>Fri</span></div><div class="progress-day"><div class="bar-shell"><i style="height:16%"></i></div><span>Sat</span></div><div class="progress-day"><div class="bar-shell"><i style="height:10%"></i></div><span>Sun</span></div></div><p class="chart-caption">Your real practice time will show up here as you learn.</p></section><section class="panel-card badge-card"><div class="badge-illustration">🏅</div><p class="eyebrow small-eyebrow">NEXT BADGE</p><h2>Word Collector</h2><p>Learn 10 words to unlock your next shiny badge.</p><div class="badge-progress"><span id="badge-progress-fill"></span></div><div class="badge-progress-label"><span id="badge-progress-text">0 of 10 words</span><span>10</span></div></section></div>
+        <div class="grownup-note"><span>💜</span><p><strong>Progress is personal.</strong> This demo keeps learning stats on this device only. Celebrate effort, curiosity, and trying again—not just getting every answer right.</p><button class="text-button" id="reset-progress">Reset demo data</button></div>
+      </section>
+
+      <footer class="app-footer"><span>✦ Made for growing minds</span><span>Little lessons. Big possibilities. <b>♥</b></span></footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modal-backdrop" hidden>
+    <section class="grownup-modal" role="dialog" aria-modal="true" aria-labelledby="grownup-title">
+      <button class="modal-close" id="modal-close" aria-label="Close grown-up corner">×</button>
+      <div class="modal-icon">🧡</div><p class="eyebrow small-eyebrow">A NOTE FOR GROWN-UPS</p><h2 id="grownup-title">Learning should feel safe.</h2><p>This starter app runs in your browser. It has no account system, ads, chat, or external tracking. Learning progress is stored locally on this device.</p><div class="grownup-settings"><label for="learner-name">Learner’s nickname</label><input id="learner-name" type="text" maxlength="20" placeholder="e.g. Sunny" /><label for="daily-goal">Daily practice goal</label><select id="daily-goal"><option value="5">5 minutes</option><option value="10" selected>10 minutes</option><option value="15">15 minutes</option></select><p class="settings-hint">Adult settings are a prototype, not a parental-lock feature.</p></div><button class="button button-primary button-full" id="save-settings">Save settings</button>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
